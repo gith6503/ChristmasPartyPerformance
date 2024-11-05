@@ -25,23 +25,20 @@ public class RegisterActivity extends AppCompatActivity {
         btnSubmit = findViewById(R.id.btnSubmit);
         db = new DatabaseHelper(this);
 
-        btnSubmit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String name = etName.getText().toString();
-                String email = etEmail.getText().toString();
+        btnSubmit.setOnClickListener(view -> {
+            String name = etName.getText().toString();
+            String email = etEmail.getText().toString();
 
-                if (name.isEmpty() || email.isEmpty()) {
-                    Toast.makeText(RegisterActivity.this, "All fields are required", Toast.LENGTH_SHORT).show();
+            if (name.isEmpty() || email.isEmpty()) {
+                Toast.makeText(RegisterActivity.this, "All fields are required", Toast.LENGTH_SHORT).show();
+            } else {
+                boolean isInserted = db.insertUser(name, email);
+                if (isInserted) {
+                    Toast.makeText(RegisterActivity.this, "Registration Successful", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(RegisterActivity.this, MainActivity.class));
+                    finish();
                 } else {
-                    boolean isInserted = db.insertUser(name, email);
-                    if (isInserted) {
-                        Toast.makeText(RegisterActivity.this, "Registration Successful", Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(RegisterActivity.this, MainActivity.class));
-                        finish();
-                    } else {
-                        Toast.makeText(RegisterActivity.this, "Registration Failed", Toast.LENGTH_SHORT).show();
-                    }
+                    Toast.makeText(RegisterActivity.this, "Registration Failed", Toast.LENGTH_SHORT).show();
                 }
             }
         });

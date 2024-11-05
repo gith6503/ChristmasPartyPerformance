@@ -13,9 +13,17 @@
         android:text="Register for Party" />
 
     <Button
-        android:id="@+id/btnViewDetails"
+        android:id="@+id/btnEventDetails"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="View Event Details"
+        android:text="Event Details"
+        android:layout_marginTop="10dp"/>
+
+    <Button
+        android:id="@+id/btnParticipants"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="View Registered Participants"
         android:layout_marginTop="10dp"/>
 </LinearLayout>
+

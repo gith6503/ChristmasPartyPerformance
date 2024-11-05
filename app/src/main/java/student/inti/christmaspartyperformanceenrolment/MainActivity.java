@@ -4,13 +4,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
-
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button btnRegister, btnViewDetails;
+    private Button btnRegister, btnEventDetails, btnParticipants;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,7 +16,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         btnRegister = findViewById(R.id.btnRegister);
-        btnViewDetails = findViewById(R.id.btnViewDetails);
+        btnEventDetails = findViewById(R.id.btnEventDetails);
+        btnParticipants = findViewById(R.id.btnParticipants);
 
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -27,12 +26,20 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        btnViewDetails.setOnClickListener(new View.OnClickListener() {
+        btnEventDetails.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // Code to view event details (implement as needed)
-                Toast.makeText(MainActivity.this, "Feature Coming Soon", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(MainActivity.this, EventDetailsActivity.class));
+            }
+        });
+
+        btnParticipants.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, ParticipantsActivity.class));
             }
         });
     }
 }
+
+
