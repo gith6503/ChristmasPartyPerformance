@@ -3,4 +3,7 @@
     <string name="register">Register</string>
     <string name="event_details">Event Details</string>
     <string name="view_participants">View Participants</string>
+    <string name="submit">Submit</string>
+    <string name="registration_success">Registration successful!</string>
+    <string name="registration_failure">Registration failed, please try again.</string>
 </resources>

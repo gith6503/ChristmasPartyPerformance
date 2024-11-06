@@ -38,16 +38,16 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     public boolean insertParticipant(String name, String email) {
-        // Get writable database and use ContentValues to insert data
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-        contentValues.put(COL_NAME, name);  // Use COL_NAME constant
-        contentValues.put(COL_EMAIL, email); // Use COL_EMAIL constant
+        contentValues.put(COL_NAME, name);
+        contentValues.put(COL_EMAIL, email);
 
-        // Insert data and check if it was successful
+        // Insert the data into the database
         long result = db.insert(TABLE_NAME, null, contentValues);
         return result != -1;  // Returns true if insert was successful, false otherwise
     }
+
 
     public List<String> getAllParticipants() {
         List<String> participants = new ArrayList<>();
@@ -77,3 +77,4 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return participants;
     }
 }
+

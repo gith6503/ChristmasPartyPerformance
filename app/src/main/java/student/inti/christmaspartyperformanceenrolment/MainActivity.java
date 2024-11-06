@@ -1,4 +1,3 @@
-// File: MainActivity.java
 package student.inti.christmaspartyperformanceenrolment;
 
 import android.content.Intent;
@@ -8,25 +7,21 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
-
-    private Button btnRegister, btnViewParticipants;
+    private Button btnGoToRegister;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        btnRegister = findViewById(R.id.btnRegister);
-        btnViewParticipants = findViewById(R.id.btnViewParticipants);
+        // Initialize the button
+        btnGoToRegister = findViewById(R.id.btnGoToRegister);
 
-        btnRegister.setOnClickListener(v -> {
+        // Set an OnClickListener to navigate to the RegisterActivity
+        btnGoToRegister.setOnClickListener(v -> {
+            // Create an Intent to navigate to the RegisterActivity
             Intent intent = new Intent(MainActivity.this, RegisterActivity.class);
-            startActivity(intent);
-        });
-
-        btnViewParticipants.setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity.this, ParticipantsActivity.class);
-            startActivity(intent);
+            startActivity(intent);  // Start the RegisterActivity
         });
     }
 }

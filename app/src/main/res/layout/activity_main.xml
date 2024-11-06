@@ -1,49 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:padding="16dp"
-    android:background="@color/backgroundColor"
-    tools:context=".MainActivity">
+    android:gravity="center">
 
-    <!-- Christmas Tree Image -->
-    <ImageView
-        android:id="@+id/imgChristmasTree"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="24dp"
-        android:src="@drawable/ic_christmas_tree"
-        android:contentDescription="@string/app_name" />
-
+    <!-- Title TextView -->
     <TextView
-        android:id="@+id/welcomeText"
+        android:id="@+id/tvWelcome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Welcome to the Christmas Party Performance Enrolment!"
-        android:textSize="18sp" />
+        android:text="Welcome to the Christmas Party Performance"
+        android:textSize="18sp"
+        android:layout_marginBottom="20dp"
+        android:textAlignment="center"/>
 
-    <!-- Register Button -->
+    <!-- Button to Navigate to Register Activity -->
     <Button
-        android:id="@+id/btnRegister"
-        android:layout_width="match_parent"
+        android:id="@+id/btnGoToRegister"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/imgChristmasTree"
-        android:layout_marginTop="24dp"
-        android:text="Register"
-        android:backgroundTint="?attr/colorPrimary"
-       android:textColor="@android:color/white" />  <!-- Default to white for better readability -->
+        android:text="Register for the Event"
+        android:layout_marginTop="20dp"/>
 
-    <!-- View Participants Button -->
-    <Button
-        android:id="@+id/btnViewParticipants"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/btnRegister"
-        android:layout_marginTop="16dp"
-        android:text="View Participants"
-        android:backgroundTint="?attr/colorPrimary"
-        android:textColor="@android:color/white" /> <!-- Default to white -->
-
-</RelativeLayout>
+</LinearLayout>
