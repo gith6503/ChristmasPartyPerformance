@@ -1,10 +1,14 @@
 package student.inti.christmaspartyperformanceenrolment;
+
 import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.text.TextUtils;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+import android.util.Log;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class RegisterActivity extends AppCompatActivity {
@@ -24,15 +28,44 @@ public class RegisterActivity extends AppCompatActivity {
         db = new DatabaseHelper(this);
 
         btnSubmit.setOnClickListener(v -> {
-            String name = editTextName.getText().toString();
-            String email = editTextEmail.getText().toString();
+            String name = editTextName.getText().toString().trim();
+            String email = editTextEmail.getText().toString().trim();
 
-            if (db.insertParticipant(name, email)) {
+            // Validate name and email input
+            if (TextUtils.isEmpty(name)) {
+                Toast.makeText(this, "Name cannot be empty", Toast.LENGTH_SHORT).show();
+                return;
+            }
+
+            if (TextUtils.isEmpty(email)) {
+                Toast.makeText(this, "Email cannot be empty", Toast.LENGTH_SHORT).show();
+                return;
+            }
+
+            if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+                Toast.makeText(this, "Invalid email format", Toast.LENGTH_SHORT).show();
+                return;
+            }
+
+            // Disable the button to prevent multiple submissions
+            btnSubmit.setEnabled(false);
+
+            // Insert participant into the database
+            boolean success = db.insertParticipant(name, email);
+            if (success) {
                 Toast.makeText(this, "Registered successfully!", Toast.LENGTH_SHORT).show();
-                finish();
+                // Clear input fields after successful registration
+                editTextName.setText("");
+                editTextEmail.setText("");
+                finish(); // Close the activity after successful registration
             } else {
                 Toast.makeText(this, "Registration failed.", Toast.LENGTH_SHORT).show();
+                Log.e("RegisterActivity", "Failed to insert participant: " + name + " - " + email);
             }
+
+            // Re-enable the submit button
+            btnSubmit.setEnabled(true);
         });
     }
 }
+

@@ -17,6 +17,13 @@
         android:src="@drawable/ic_christmas_tree"
         android:contentDescription="@string/app_name" />
 
+    <TextView
+        android:id="@+id/welcomeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Welcome to the Christmas Party Performance Enrolment!"
+        android:textSize="18sp" />
+
     <!-- Register Button -->
     <Button
         android:id="@+id/btnRegister"

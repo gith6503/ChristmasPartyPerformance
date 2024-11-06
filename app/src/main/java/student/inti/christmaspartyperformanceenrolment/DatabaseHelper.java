@@ -1,11 +1,11 @@
 package student.inti.christmaspartyperformanceenrolment;
 
-
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,6 +23,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
+        // Creating the table with correct column names
         db.execSQL("CREATE TABLE " + TABLE_NAME + " (" +
                 COL_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 COL_NAME + " TEXT, " +
@@ -31,28 +32,48 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+        // Dropping the table if it exists and recreating it
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
         onCreate(db);
     }
 
     public boolean insertParticipant(String name, String email) {
+        // Get writable database and use ContentValues to insert data
         SQLiteDatabase db = this.getWritableDatabase();
-        ContentValues values = new ContentValues();
-        values.put(COL_NAME, name);
-        values.put(COL_EMAIL, email);
-        return db.insert(TABLE_NAME, null, values) != -1;
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(COL_NAME, name);  // Use COL_NAME constant
+        contentValues.put(COL_EMAIL, email); // Use COL_EMAIL constant
+
+        // Insert data and check if it was successful
+        long result = db.insert(TABLE_NAME, null, contentValues);
+        return result != -1;  // Returns true if insert was successful, false otherwise
     }
 
     public List<String> getAllParticipants() {
-        List<String> list = new ArrayList<>();
+        List<String> participants = new ArrayList<>();
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_NAME, null);
+
+        // Check if cursor has data and iterate through results
         if (cursor.moveToFirst()) {
+            int nameIndex = cursor.getColumnIndex(COL_NAME);
+            int emailIndex = cursor.getColumnIndex(COL_EMAIL);
+
+            // Validate that the column indices are correct
+            if (nameIndex == -1 || emailIndex == -1) {
+                // Log or handle the error here
+                cursor.close();
+                throw new IllegalStateException("Column names are incorrect in the database query.");
+            }
+
             do {
-                list.add(cursor.getString(1) + " - " + cursor.getString(2));
+                String name = cursor.getString(nameIndex);
+                String email = cursor.getString(emailIndex);
+                participants.add(name + " - " + email);
             } while (cursor.moveToNext());
         }
-        cursor.close();
-        return list;
+
+        cursor.close();  // Always close the cursor
+        return participants;
     }
 }

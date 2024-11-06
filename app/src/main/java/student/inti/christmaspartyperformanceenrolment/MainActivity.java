@@ -19,20 +19,14 @@ public class MainActivity extends AppCompatActivity {
         btnRegister = findViewById(R.id.btnRegister);
         btnViewParticipants = findViewById(R.id.btnViewParticipants);
 
-        btnRegister.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, RegisterActivity.class);
-                startActivity(intent);
-            }
+        btnRegister.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, RegisterActivity.class);
+            startActivity(intent);
         });
 
-        btnViewParticipants.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, ParticipantsActivity.class);
-                startActivity(intent);
-            }
+        btnViewParticipants.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, ParticipantsActivity.class);
+            startActivity(intent);
         });
     }
 }
