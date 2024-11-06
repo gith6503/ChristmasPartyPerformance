@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="btnViewParticipants" type="id" />
+    <item name="listViewParticipants" type="id" />
+    <item name="editTextEmail" type="id" />
+    <item name="editTextName" type="id" />
+</resources>

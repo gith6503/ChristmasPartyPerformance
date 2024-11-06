@@ -10,14 +10,16 @@
         android:id="@+id/etName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter your name"/>
+        android:hint="Enter your name"
+        android:minHeight="48dp" />
 
     <EditText
         android:id="@+id/etEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Enter your email"
-        android:inputType="textEmailAddress"/>
+        android:inputType="textEmailAddress"
+        android:minHeight="48dp" />
 
     <Button
         android:id="@+id/btnSubmit"

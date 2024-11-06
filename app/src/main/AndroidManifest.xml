@@ -5,12 +5,10 @@
     <application
         android:allowBackup="true"
         android:label="Christmas Party Enrollment App"
-        android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
 
         <activity android:name=".ParticipantsActivity" />
         <activity android:name=".EventDetailsActivity" />
-        <activity android:name=".RsvpConfirmationActivity" />
         <activity android:name=".RegisterActivity" />
         <activity android:name=".MainActivity"
             android:exported="true">

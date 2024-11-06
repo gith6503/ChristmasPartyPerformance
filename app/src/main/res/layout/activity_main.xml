@@ -1,29 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
+    android:background="@color/backgroundColor"
     android:padding="16dp">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/ic_christmas_tree"
+        android:contentDescription="Christmas Tree" />
 
     <Button
         android:id="@+id/btnRegister"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Register for Party" />
+        android:text="Register"
+        android:layout_marginTop="24dp"
+        android:backgroundTint="@color/buttonColor"
+        android:textColor="@color/textColor" />
 
     <Button
         android:id="@+id/btnEventDetails"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/buttonColor"
         android:text="Event Details"
-        android:layout_marginTop="10dp"/>
+        android:textColor="@color/textColor"
+        tools:ignore="DuplicateClickableBoundsCheck" />
 
     <Button
         android:id="@+id/btnParticipants"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="View Registered Participants"
-        android:layout_marginTop="10dp"/>
-</LinearLayout>
+        android:text="View Participants"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/buttonColor"
+        android:textColor="@color/textColor" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_button"
+        android:contentDescription="@string/app_name"
+        android:elevation="4dp"
+        android:paddingLeft="12dp"
+        android:paddingTop="8dp"
+        android:paddingRight="12dp"
+        android:paddingBottom="8dp" />
+
+
+</RelativeLayout>
+
 
