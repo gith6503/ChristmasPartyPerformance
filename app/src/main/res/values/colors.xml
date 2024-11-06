@@ -1,5 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <!-- Primary Colors -->
+    <color name="primaryColor">#B71C1C</color> <!-- Christmas Red -->
+    <color name="primaryDarkColor">#7F0000</color> <!-- Darker Red for contrast -->
+    <color name="primaryLightColor">#FFCDD2</color> <!-- Light Red for accents -->
+    <color name="accentColor">#388E3C</color> <!-- Christmas Green -->
+
+    <!-- Background Colors -->
+    <color name="backgroundColor">#F1F8E9</color> <!-- Light Background -->
+    <color name="surfaceColor">#FFFFFF</color> <!-- Surface for cards and dialogs -->
+    <color name="dividerColor">#BDBDBD</color> <!-- Gray divider for separators -->
+
+    <!-- Text Colors -->
+    <color name="textPrimaryColor">#212121</color> <!-- Dark text for readability -->
+    <color name="textSecondaryColor">#757575</color> <!-- Secondary text -->
+    <color name="textOnPrimaryColor">#FFFFFF</color> <!-- White text for buttons on primary color -->
+
+    <!-- Button Colors -->
+    <color name="buttonColor">#FFEB3B</color> <!-- Gold Button for festive feel -->
+    <color name="buttonTextColor">#212121</color> <!-- Dark button text color for readability -->
+
+    <!-- Additional Christmas Colors -->
+    <color name="snowflakeColor">#E1F5FE</color> <!-- Light blue for snowflakes and frosty elements -->
+    <color name="hollyBerryColor">#C62828</color> <!-- Darker red for berries or accents -->
+    <color name="mistletoeColor">#81C784</color> <!-- Light green for mistletoe leaves -->
+
+    <!-- Transparent Colors -->
+    <color name="transparentOverlay">#66000000</color> <!-- Semi-transparent black overlay -->
+
 </resources>
