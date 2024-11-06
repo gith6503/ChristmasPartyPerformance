@@ -1,10 +1,5 @@
+// File: MainActivity.java
 package student.inti.christmaspartyperformanceenrolment;
-
-import android.annotation.SuppressLint;
-import android.content.Intent;
-import android.os.Bundle;
-import android.view.View;
-import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,9 +8,9 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
+
     private Button btnRegister, btnViewParticipants;
 
-    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,14 +19,20 @@ public class MainActivity extends AppCompatActivity {
         btnRegister = findViewById(R.id.btnRegister);
         btnViewParticipants = findViewById(R.id.btnViewParticipants);
 
-        btnRegister.setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity.this, RegisterActivity.class);
-            startActivity(intent);
+        btnRegister.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, RegisterActivity.class);
+                startActivity(intent);
+            }
         });
 
-        btnViewParticipants.setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity.this, ParticipantsActivity.class);
-            startActivity(intent);
+        btnViewParticipants.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, ParticipantsActivity.class);
+                startActivity(intent);
+            }
         });
     }
 }

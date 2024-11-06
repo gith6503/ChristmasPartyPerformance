@@ -3,56 +3,40 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="16dp"
     android:background="@color/backgroundColor"
-    android:padding="16dp">
+    tools:context=".MainActivity">
 
+    <!-- Christmas Tree Image -->
     <ImageView
+        android:id="@+id/imgChristmasTree"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="24dp"
         android:src="@drawable/ic_christmas_tree"
-        android:contentDescription="Christmas Tree" />
+        android:contentDescription="@string/app_name" />
 
+    <!-- Register Button -->
     <Button
         android:id="@+id/btnRegister"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Register"
+        android:layout_below="@id/imgChristmasTree"
         android:layout_marginTop="24dp"
-        android:backgroundTint="@color/buttonColor"
-        android:textColor="@color/textColor" />
+        android:text="Register"
+        android:backgroundTint="?attr/colorPrimary"
+       android:textColor="@android:color/white" />  <!-- Default to white for better readability -->
 
+    <!-- View Participants Button -->
     <Button
-        android:id="@+id/btnEventDetails"
+        android:id="@+id/btnViewParticipants"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/btnRegister"
         android:layout_marginTop="16dp"
-        android:backgroundTint="@color/buttonColor"
-        android:text="Event Details"
-        android:textColor="@color/textColor"
-        tools:ignore="DuplicateClickableBoundsCheck" />
-
-    <Button
-        android:id="@+id/btnParticipants"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:text="View Participants"
-        android:layout_marginTop="16dp"
-        android:backgroundTint="@color/buttonColor"
-        android:textColor="@color/textColor" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/rounded_button"
-        android:contentDescription="@string/app_name"
-        android:elevation="4dp"
-        android:paddingLeft="12dp"
-        android:paddingTop="8dp"
-        android:paddingRight="12dp"
-        android:paddingBottom="8dp" />
-
+        android:backgroundTint="?attr/colorPrimary"
+        android:textColor="@android:color/white" /> <!-- Default to white -->
 
 </RelativeLayout>
-
-
