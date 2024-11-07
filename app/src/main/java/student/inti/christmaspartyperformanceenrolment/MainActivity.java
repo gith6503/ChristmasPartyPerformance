@@ -37,9 +37,6 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
         });
 
-        // Set up the ListView (if you want to display a list of participants)
-        // Note: You should create an adapter and populate the ListView with data
-        // For now, we just initialize the ListView without data
-        // Example: listViewParticipants.setAdapter(new ParticipantAdapter(this, participantsList));
+
     }
 }
