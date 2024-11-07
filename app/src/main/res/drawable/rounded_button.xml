@@ -4,5 +4,5 @@
     <corners android:radius="16dp" />
 
     <!-- Set the solid color for the button background -->
-    <solid android:color="@color/buttonColor" />
+
 </shape>

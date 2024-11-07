@@ -4,45 +4,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="24dp">
 
+    <!-- Event Details Content -->
     <TextView
-        android:id="@+id/tvEventTitle"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Christmas Party 2024"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:gravity="center"/>
+        android:text="Event Details"
+        android:textSize="22sp"
+        android:layout_marginBottom="24dp"/>
 
-    <TextView
-        android:id="@+id/tvEventDate"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Date: December 25, 2024"
-        android:textSize="18sp"
-        android:layout_marginTop="10dp"/>
-
-    <TextView
-        android:id="@+id/tvEventLocation"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Location: Downtown Conference Hall"
-        android:textSize="18sp"
-        android:layout_marginTop="5dp"/>
-
-    <TextView
-        android:id="@+id/tvEventDescription"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Description: Join us for an evening of celebration, food, and music!"
-        android:textSize="16sp"
-        android:layout_marginTop="10dp"/>
-
+    <!-- Confirm RSVP Button -->
     <Button
         android:id="@+id/btnConfirmRsvp"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Confirm RSVP"
-        android:layout_marginTop="20dp"/>
+        android:text="Confirm RSVP"/>
 </LinearLayout>

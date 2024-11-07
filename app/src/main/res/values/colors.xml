@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- File: colors.xml -->
-
-    <!-- colors.xml -->
-    <resources>
-        <color name="backgroundColor">#FFFFFF</color>
-        <color name="buttonColor">#FF6200EE</color>
-        <color name="textColor">#FFFFFF</color>
+<!-- res/values/colors.xml -->
+<resources>
+    <color name="primarycolor">#6200EE</color> <!-- Example purple color -->
 </resources>
+
 
 
 
