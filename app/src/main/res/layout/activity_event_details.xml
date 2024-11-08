@@ -1,23 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="24dp">
+    android:padding="16dp"
+    android:background="@drawable/gradient_bg">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp"
+            android:gravity="center">
 
-    <!-- Event Details Content -->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Event Details"
-        android:textSize="22sp"
-        android:layout_marginBottom="24dp"/>
+        <!-- Event Image -->
+        <ImageView
+            android:id="@+id/eventImageView"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:src="@drawable/image"
+        android:contentDescription="Event Image"
+        android:scaleType="centerCrop"
+        android:layout_marginBottom="16dp"/>
 
-    <!-- Confirm RSVP Button -->
-    <Button
-        android:id="@+id/btnConfirmRsvp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Confirm RSVP"/>
-</LinearLayout>
+        <!-- Event Title -->
+        <TextView
+            android:id="@+id/tvEventTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Event Title"
+            android:textColor="#000000"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp"/>
+
+        <!-- Event Description -->
+        <TextView
+            android:id="@+id/tvEventDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="The purpose of this event is just to have fun."
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Event Date -->
+        <TextView
+            android:id="@+id/tvEventDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Date: December 13 - 15, 2024"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:layout_marginBottom="8dp"/>
+
+                <!-- Event Time -->
+                <TextView
+                    android:id="@+id/tvEventTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Time: 8pm - 11pm"
+                    android:textColor="#000000"
+                    android:textSize="16sp"
+                    android:layout_marginBottom="8dp"/>
+
+        <!-- Event Location -->
+        <TextView
+            android:id="@+id/tvEventLocation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Location: Bukit Jalil National Stadium"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- RSVP Button -->
+        <Button
+            android:id="@+id/btnRsvp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="RSVP"
+            android:layout_marginTop="20dp"/>
+        </LinearLayout>
+</ScrollView>

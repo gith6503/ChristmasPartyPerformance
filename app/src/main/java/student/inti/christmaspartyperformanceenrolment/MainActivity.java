@@ -11,6 +11,7 @@ public class MainActivity extends AppCompatActivity {
     private Button btnGoToRegister;
     private Button btnConfirmRsvp;
     private Button btnViewParticipants;
+    private Button btnEventDetails;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
         btnGoToRegister = findViewById(R.id.btnGoToRegister);
         btnConfirmRsvp = findViewById(R.id.btnConfirmRsvp);
         btnViewParticipants = findViewById(R.id.btnViewParticipants);
+        btnEventDetails = findViewById(R.id.btnEventDetails);
 
         // Set onClick listeners for the buttons
         btnGoToRegister.setOnClickListener(v -> {
@@ -47,6 +49,14 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             } catch (Exception e) {
                 Toast.makeText(MainActivity.this, "Error loading participants list", Toast.LENGTH_SHORT).show();
+            }
+        });
+        btnEventDetails.setOnClickListener(v -> {
+            try {
+                Intent intent = new Intent(MainActivity.this, EventDetailsActivity.class);
+                startActivity(intent);
+            } catch (Exception e) {
+                Toast.makeText(MainActivity.this, "Error loading event details", Toast.LENGTH_SHORT).show();
             }
         });
     }
