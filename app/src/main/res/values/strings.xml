@@ -1,9 +1,38 @@
 <resources>
-    <string name="app_name">Christmas Party Enrollment App</string>
-    <string name="register">Register</string>
-    <string name="event_details">Event Details</string>
-    <string name="view_participants">View Participants</string>
-    <string name="submit">Submit</string>
-    <string name="registration_success">Registration successful!</string>
-    <string name="registration_failure">Registration failed, please try again.</string>
+    <!-- Hint Texts -->
+    <string name="hint_name">Enter your name</string>
+    <string name="hint_email">Enter your email</string>
+
+    <!-- Button Texts -->
+    <string name="submit_button">Submit</string>
+    <string name="reset_button">Reset Participants</string>
+
+    <!-- Song List (for Spinner) -->
+    <string-array name="song_list">
+        <item>We Wish you a Merry Christmas</item>
+        <item>Jingle Bell</item>
+        <item>Silent Night</item>
+        <item>Deck the Halls</item>
+        <item>Jolly old st Nicholas</item>
+        <item>Christmas Waltz</item>
+    </string-array>
+
+    <!-- Toast Messages -->
+    <string name="toast_participant_registered">Participant registered with song: %1$s</string>
+    <string name="toast_empty_name">Please enter a name</string>
+    <string name="toast_participants_reset">Participants list reset.</string>
+
+    <!-- Error Messages -->
+    <string name="error_invalid_email">Invalid email format</string>
+
+    <!-- Activity Titles -->
+    <string name="register_activity_title">Register Participant</string>
+    <string name="participants_activity_title">Participants List</string>
+
+    <!-- Activity Descriptions -->
+    <string name="register_activity_description">Enter your name, email, and select a song to register.</string>
+    <string name="participants_activity_description">View and manage the list of registered participants and their selected songs.</string>
+
+    <!-- Miscellaneous -->
+    <string name="app_name">Christmas Party Performance Enrollment</string>
 </resources>

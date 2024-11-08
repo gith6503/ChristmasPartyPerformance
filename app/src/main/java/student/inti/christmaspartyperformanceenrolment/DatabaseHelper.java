@@ -5,76 +5,87 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-
 import java.util.ArrayList;
 import java.util.List;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
-    private static final String DATABASE_NAME = "party.db";
+
+    // Database Name
+    private static final String DATABASE_NAME = "participants.db";
+
+    // Table Name
+    private static final String TABLE_PARTICIPANTS = "participants";
+
+    // Column Names
+    private static final String COLUMN_ID = "id";
+    private static final String COLUMN_NAME = "name";
+    private static final String COLUMN_EMAIL = "email";
+    private static final String COLUMN_SONG = "song";
+
+    // Database Version
     private static final int DATABASE_VERSION = 1;
-    private static final String TABLE_NAME = "participants";
-    private static final String COL_ID = "ID";
-    private static final String COL_NAME = "NAME";
-    private static final String COL_EMAIL = "EMAIL";
+
+    // SQL query to create the table
+    private static final String CREATE_TABLE_PARTICIPANTS =
+            "CREATE TABLE " + TABLE_PARTICIPANTS + "("
+                    + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
+                    + COLUMN_NAME + " TEXT, "
+                    + COLUMN_EMAIL + " TEXT, "
+                    + COLUMN_SONG + " TEXT);";
 
     public DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
+    // Called when the database is created for the first time
     @Override
     public void onCreate(SQLiteDatabase db) {
-        // Creating the table with correct column names
-        db.execSQL("CREATE TABLE " + TABLE_NAME + " (" +
-                COL_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                COL_NAME + " TEXT, " +
-                COL_EMAIL + " TEXT)");
+        db.execSQL(CREATE_TABLE_PARTICIPANTS); // Create the participants table
     }
 
+    // Called when the database version is updated
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        // Dropping the table if it exists and recreating it
-        db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
-        onCreate(db);
+        // Drop the old table if it exists and create the new one
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_PARTICIPANTS);
+        onCreate(db); // Create new table
     }
 
-    public boolean insertParticipant(String name, String email) {
+    // Method to add a participant to the database
+    public void addParticipant(String name, String email, String song) {
         SQLiteDatabase db = this.getWritableDatabase();
-        ContentValues contentValues = new ContentValues();
-        contentValues.put(COL_NAME, name);
-        contentValues.put(COL_EMAIL, email);
-
-        // Insert the data into the database
-        long result = db.insert(TABLE_NAME, null, contentValues);
-        return result != -1;  // Returns true if insert was successful, false otherwise
+        ContentValues values = new ContentValues();
+        values.put(COLUMN_NAME, name);
+        values.put(COLUMN_EMAIL, email);  // Store the email
+        values.put(COLUMN_SONG, song);    // Store the song
+        db.insert(TABLE_PARTICIPANTS, null, values);  // Insert values into the table
+        db.close();  // Close the database connection
     }
 
-
+    // Method to get all participants from the database
     public List<String> getAllParticipants() {
         List<String> participants = new ArrayList<>();
+        String query = "SELECT * FROM " + TABLE_PARTICIPANTS;
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_NAME, null);
+        Cursor cursor = db.rawQuery(query, null);
 
-        // Check if cursor has data and iterate through results
+        // Loop through the result and add each participant to the list
         if (cursor.moveToFirst()) {
-            int nameIndex = cursor.getColumnIndex(COL_NAME);
-            int emailIndex = cursor.getColumnIndex(COL_EMAIL);
-
-            // Validate that the column indices are correct
-            if (nameIndex == -1 || emailIndex == -1) {
-                // Log or handle the error here
-                cursor.close();
-                throw new IllegalStateException("Column names are incorrect in the database query.");
-            }
-
             do {
-                String name = cursor.getString(nameIndex);
-                String email = cursor.getString(emailIndex);
-                participants.add(name + " - " + email);
+                String name = cursor.getString(cursor.getColumnIndex(COLUMN_NAME));
+                String song = cursor.getString(cursor.getColumnIndex(COLUMN_SONG));
+                participants.add(name + " - " + song);  // Format participant info
             } while (cursor.moveToNext());
         }
-
-        cursor.close();  // Always close the cursor
+        cursor.close();  // Close the cursor
+        db.close();  // Close the database connection
         return participants;
     }
-}
 
+    // Method to clear all participants from the database
+    public void clearParticipants() {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(TABLE_PARTICIPANTS, null, null);  // Delete all rows from the table
+        db.close();  // Close the database connection
+    }
+}

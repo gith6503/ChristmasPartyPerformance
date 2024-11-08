@@ -8,9 +8,19 @@
     android:gravity="center"
     android:background="@drawable/gradient_bg">
 
+    <!-- Display Images -->
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:src="@drawable/image" />
+
+    <!-- Welcome Text -->
     <TextView
         android:id="@+id/tvWelcome"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Welcome to Christmas Party Performance Enrolment App"
         android:textSize="24sp"
@@ -20,25 +30,29 @@
         android:textAlignment="center" />
 
     <Button
-        android:id="@+id/listViewParticipants"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="View Participants"
-        android:layout_marginBottom="16dp"/>
-
-    <Button
         android:id="@+id/btnGoToRegister"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Go to Register"
-        android:layout_marginTop="16dp"/>
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
 
     <Button
         android:id="@+id/btnConfirmRsvp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="RSVP Confirmation"
-        android:layout_marginBottom="16dp"/>
+        android:text="Confirm RSVP"
+        android:layout_below="@id/btnGoToRegister"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp" />
+
+    <Button
+        android:id="@+id/btnViewParticipants"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="View Participants"
+        android:layout_below="@id/btnConfirmRsvp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp" />
 
 </LinearLayout>
-

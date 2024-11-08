@@ -1,130 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp"
-    android:background="@drawable/gradient_bg">
-
-    <!-- Name Label -->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Name"
-        android:textSize="16sp"
-        android:textColor="@android:color/black"
-        android:layout_marginBottom="8dp"
-        android:contentDescription="Name Label"/>
+    android:padding="48dp"
+    android:background="@drawable/gradient_bg"
+    tools:ignore="ExtraText">
 
     <!-- Name EditText -->
     <EditText
         android:id="@+id/etName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:background="@drawable/edittext_background"
         android:hint="Enter your name"
         android:inputType="textPersonName"
         android:minHeight="48dp"
-        android:padding="12dp" />
-
-    <!-- Email Label -->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Email"
-        android:textSize="16sp"
-        android:textColor="@android:color/black"
-        android:layout_marginBottom="8dp"
-        android:contentDescription="Email Label"/>
+        android:layout_marginBottom="16dp"/>
 
     <!-- Email EditText -->
     <EditText
         android:id="@+id/etEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:background="@drawable/edittext_background"
         android:hint="Enter your email"
         android:inputType="textEmailAddress"
         android:minHeight="48dp"
-        android:padding="12dp" />
+        android:layout_marginBottom="16dp"/>
 
-    <!-- Phone Label -->
+    <!-- Song Selection Title -->
     <TextView
-        android:layout_width="wrap_content"
+        android:id="@+id/tvSelectSong"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Phone"
-        android:textSize="16sp"
-        android:textColor="@android:color/black"
+        android:text="What songs do you want to perform?"
+        android:textSize="18sp"
         android:layout_marginBottom="8dp"
-        android:contentDescription="Phone Label"/>
+        android:textColor="#000000"/>
 
-    <!-- Phone EditText -->
-    <EditText
-        android:id="@+id/etPhone"
+    <!-- Song Spinner -->
+    <Spinner
+        android:id="@+id/spinnerSong"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
-        android:background="@drawable/edittext_background"
-        android:hint="Enter your phone number"
-        android:inputType="phone"
-        android:minHeight="48dp"
-        android:padding="12dp" />
-
-    <!-- Password Label -->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Password"
-        android:textSize="16sp"
-        android:textColor="@android:color/black"
-        android:layout_marginBottom="8dp"
-        android:contentDescription="Password Label"/>
-
-    <!-- Password EditText -->
-    <EditText
-        android:id="@+id/etPassword"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:background="@drawable/edittext_background"
-        android:hint="Enter your password"
-        android:inputType="textPassword"
-        android:minHeight="48dp"
-        android:padding="12dp" />
-
-    <!-- Confirm Password Label -->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Confirm Password"
-        android:textSize="16sp"
-        android:textColor="@android:color/black"
-        android:layout_marginBottom="8dp"
-        android:contentDescription="Confirm Password Label"/>
-
-    <!-- Confirm Password EditText -->
-    <EditText
-        android:id="@+id/etConfirmPassword"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:background="@drawable/edittext_background"
-        android:hint="Confirm your password"
-        android:inputType="textPassword"
-        android:minHeight="48dp"
-        android:padding="12dp" />
+        android:entries="@array/song_list"
+        android:minHeight="48dp" />
 
     <!-- Submit Button -->
     <Button
         android:id="@+id/btnSubmit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Submit"
-        android:layout_marginTop="16dp"/>
+        android:text="Submit"/>
 
 </LinearLayout>
-
-
