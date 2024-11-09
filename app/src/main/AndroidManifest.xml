@@ -30,6 +30,9 @@
         <!-- RSVP Confirmation Activity Declaration -->
         <activity android:name=".RsvpConfirmationActivity" />
 
+        <!-- Meal Selection Activity Declaration -->
+        <activity android:name=".MealSelectionActivity"></activity>
+
     </application>
 </manifest>
 

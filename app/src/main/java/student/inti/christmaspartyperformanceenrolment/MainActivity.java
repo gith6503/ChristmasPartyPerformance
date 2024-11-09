@@ -12,6 +12,7 @@ public class MainActivity extends AppCompatActivity {
     private Button btnConfirmRsvp;
     private Button btnViewParticipants;
     private Button btnEventDetails;
+    private Button btnMealSelections;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
         btnConfirmRsvp = findViewById(R.id.btnConfirmRsvp);
         btnViewParticipants = findViewById(R.id.btnViewParticipants);
         btnEventDetails = findViewById(R.id.btnEventDetails);
+        btnMealSelections = findViewById(R.id.btnMealSelections);
 
         // Set onClick listeners for the buttons
         btnGoToRegister.setOnClickListener(v -> {
@@ -57,6 +59,14 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             } catch (Exception e) {
                 Toast.makeText(MainActivity.this, "Error loading event details", Toast.LENGTH_SHORT).show();
+            }
+        });
+        btnMealSelections.setOnClickListener(v -> {
+            try {
+                Intent intent = new Intent(MainActivity.this, MealSelectionActivity.class);
+                startActivity(intent);
+            } catch (Exception e) {
+                Toast.makeText(MainActivity.this, "Error loading meal selections", Toast.LENGTH_SHORT).show();
             }
         });
     }

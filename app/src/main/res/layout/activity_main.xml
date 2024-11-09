@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- output -->
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
@@ -11,8 +12,8 @@
     <!-- Display Images -->
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="350dp"
-        android:layout_height="350dp"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="50dp"
         android:src="@drawable/image" />
@@ -28,7 +29,7 @@
         android:textColor="#000000"
         android:layout_marginBottom="30dp"
         android:textAlignment="center" />
-
+<!-- register button -->
     <Button
         android:id="@+id/btnGoToRegister"
         android:layout_width="wrap_content"
@@ -37,7 +38,7 @@
         android:layout_centerHorizontal="true"
         android:minHeight="48dp"
         android:text="Go to Register" />
-
+<!-- confirm rsvp button -->
     <Button
         android:id="@+id/btnConfirmRsvp"
         android:layout_width="wrap_content"
@@ -46,7 +47,7 @@
         android:layout_below="@id/btnGoToRegister"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="16dp" />
-
+<!-- view participants button -->
     <Button
         android:id="@+id/btnViewParticipants"
         android:layout_width="wrap_content"
@@ -55,12 +56,21 @@
         android:layout_below="@id/btnConfirmRsvp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="16dp" />
-
+<!-- event details button -->
     <Button
         android:id="@+id/btnEventDetails"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="View Event Details"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"/>
+    <!-- Meal Selections button -->
+    <Button
+        android:id="@+id/btnMealSelections"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Meal Selection"
         android:layout_centerHorizontal="true"
         android:layout_gravity="center"
         android:layout_marginTop="20dp"/>
